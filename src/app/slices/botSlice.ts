@@ -25,11 +25,11 @@ const botSlice = createSlice({
         setBotSelected(state, action) {
             state.selected = action.payload
         },
-        setUserWins(state, action) {
-
+        setBotWins(state, action) {
+            state.wins = action.payload
         }
     }
 })
 
-export const { setBotThinking, setBotWaiting, setBotVariant, setBotSelected, setUserWins } = botSlice.actions
+export const { setBotThinking, setBotWaiting, setBotVariant, setBotSelected, setBotWins } = botSlice.actions
 export default botSlice.reducer

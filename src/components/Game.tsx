@@ -1,27 +1,12 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { Variant } from './Variant'
 import arrow from '../assets/arrow-right.svg'
-import IVariant from '../models/variant';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { setUserSelected, setUserVariant } from '../app/slices/userSlice';
 import { setBotSelected, setBotThinking, setBotVariant, setBotWaiting } from '../app/slices/botSlice';
+import { variants } from '../data/variants';
 
 export const Game: FC = () => {
-
-    const variants: IVariant[] = [
-        {
-            name: 'paper',
-            beat: 'rock',
-        },
-        {
-            name: 'rock',
-            beat: 'scissors',
-        },
-        {
-            name: 'scissors',
-            beat: 'paper',
-        },
-    ];
 
     const dispatch = useAppDispatch()
 
@@ -37,21 +22,14 @@ export const Game: FC = () => {
 
     const onClickArrow = (): void => {
         dispatch(setUserSelected(true))
-
-        dispatch(setBotSelected(true))
         dispatch(setBotWaiting(false))
         dispatch(setBotThinking(true))
 
         setTimeout(() => {
-            dispatch(setBotVariant(variants[Math.floor(Math.random() * 3)].name))
+            dispatch(setBotSelected(true))
             dispatch(setBotThinking(false))
+            dispatch(setBotVariant(variants[Math.floor(Math.random() * 3)].name))
         }, 1000)
-    }
-
-    const checkWhoWin = (): void => {
-        if (user.variant === bot.variant) {
-            console.log("ничья")
-        }
     }
 
     return (

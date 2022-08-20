@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react'
 import thinkImg from '../assets/loading.svg'
 
 interface IVariantProps {
@@ -25,7 +25,7 @@ export const Variant = ({ variant, onClick, waiting, thinking }: IVariantProps) 
     }
 
     if (thinking) {
-        return <img className="thinking" src={thinkImg} />;
+        return <img className="thinking" src={thinkImg} alt="thinking" />;
     }
 
     return (

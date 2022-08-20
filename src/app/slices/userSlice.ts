@@ -18,7 +18,7 @@ const userSlice = createSlice({
             state.variant = action.payload
         },
         setUserWins(state, action) {
-
+            state.wins = action.payload
         }
     }
 })
