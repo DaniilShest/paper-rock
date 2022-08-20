@@ -1,7 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import botSlice from './slices/botSlice';
+import userSlice from './slices/userSlice';
 
 export const store = configureStore({
   reducer: {
+    user: userSlice,
+    bot: botSlice
   },
 });
 

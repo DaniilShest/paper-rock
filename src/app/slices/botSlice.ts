@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit/";
 import IBot from "../../models/bot";
-import IUser from "../../models/user";
 
 const initialState: IBot = {
     thinking: false,
     waiting: true,
-    variant: 'paper',
+    variant: 'rock',
+    selected: false,
     wins: 0,
 }
 
@@ -14,13 +14,16 @@ const botSlice = createSlice({
     initialState,
     reducers: {
         setBotThinking(state, action) {
-
+            state.thinking = action.payload
         },
         setBotWaiting(state, action) {
-
+            state.waiting = action.payload
         },
         setBotVariant(state, action) {
-
+            state.variant = action.payload
+        },
+        setBotSelected(state, action) {
+            state.selected = action.payload
         },
         setUserWins(state, action) {
 
@@ -28,5 +31,5 @@ const botSlice = createSlice({
     }
 })
 
-export const { } = botSlice.actions
+export const { setBotThinking, setBotWaiting, setBotVariant, setBotSelected, setUserWins } = botSlice.actions
 export default botSlice.reducer

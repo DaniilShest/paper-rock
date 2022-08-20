@@ -12,10 +12,10 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         setUserSelected(state, action) {
-
+            state.selected = action.payload
         },
         setUserVariant(state, action) {
-
+            state.variant = action.payload
         },
         setUserWins(state, action) {
 
@@ -23,5 +23,5 @@ const userSlice = createSlice({
     }
 })
 
-export const { } = userSlice.actions
+export const { setUserSelected, setUserVariant, setUserWins } = userSlice.actions
 export default userSlice.reducer
