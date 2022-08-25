@@ -1,5 +1,8 @@
 import { MouseEventHandler } from 'react'
 import thinkImg from '../assets/loading.svg'
+import paper from '../assets/paper.svg'
+import rock from '../assets/rock.svg'
+import scissors from '../assets/scissors.svg'
 
 interface IVariantProps {
     variant: string,
@@ -32,8 +35,7 @@ export const Variant = ({ variant, onClick, waiting, thinking }: IVariantProps) 
         < img
             className="variant"
             width={180}
-            src={`https://raw.githubusercontent.com/DaniilShest/paper-rock/0b15841b5815e786505b8754d8f5c2cd661194ff/public/assets/${variant}.svg`
-            }
+            src={variant === 'paper' ? paper : variant === 'rock' ? rock : scissors}
             alt="Variant"
             onClick={onClick}
         />

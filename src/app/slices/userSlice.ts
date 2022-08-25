@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit/";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit/";
 import IUser from "../../models/user";
 
 const initialState: IUser = {
@@ -11,13 +11,13 @@ const userSlice = createSlice({
     name: "userSlice",
     initialState,
     reducers: {
-        setUserSelected(state, action) {
+        setUserSelected(state, action: PayloadAction<boolean>) {
             state.selected = action.payload
         },
-        setUserVariant(state, action) {
+        setUserVariant(state, action: PayloadAction<"paper" | "rock" | "scissors">) {
             state.variant = action.payload
         },
-        setUserWins(state, action) {
+        setUserWins(state, action: PayloadAction<number>) {
             state.wins = action.payload
         }
     }

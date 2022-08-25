@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit/";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit/";
 import IBot from "../../models/bot";
+import IVariant from "../../models/variant";
 
 const initialState: IBot = {
     thinking: false,
@@ -13,19 +14,19 @@ const botSlice = createSlice({
     name: "cartSlice",
     initialState,
     reducers: {
-        setBotThinking(state, action) {
+        setBotThinking(state, action: PayloadAction<boolean>) {
             state.thinking = action.payload
         },
-        setBotWaiting(state, action) {
+        setBotWaiting(state, action: PayloadAction<boolean>) {
             state.waiting = action.payload
         },
-        setBotVariant(state, action) {
+        setBotVariant(state, action: PayloadAction<"paper" | "rock" | "scissors">) {
             state.variant = action.payload
         },
-        setBotSelected(state, action) {
+        setBotSelected(state, action: PayloadAction<boolean>) {
             state.selected = action.payload
         },
-        setBotWins(state, action) {
+        setBotWins(state, action: PayloadAction<number>) {
             state.wins = action.payload
         }
     }
