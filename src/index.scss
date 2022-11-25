@@ -20,6 +20,13 @@ body {
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 750px) {
+        height: 100vh;
+        padding-top: 50px;
+        margin: 0;
+        border-radius: 0;
+    }
 }
 
 header {
@@ -39,6 +46,10 @@ header {
         font-size: 62px;
         font-weight: 900;
     }
+
+    @media (max-width: 750px) {
+        padding: 0;
+    }
 }
 
 .game {
@@ -49,6 +60,10 @@ header {
     &__user {
         display: flex;
         align-items: center;
+
+        @media (max-width: 750px) {
+            margin-bottom: 80px;
+        }
     }
 
     &__arrow {
