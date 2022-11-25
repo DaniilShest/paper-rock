@@ -22,6 +22,7 @@ export const Game: FC = () => {
 
     const onClickArrow = (): void => {
         dispatch(setUserSelected(true))
+
         dispatch(setBotWaiting(false))
         dispatch(setBotThinking(true))
 
